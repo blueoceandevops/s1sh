@@ -13,8 +13,8 @@
 
 
 -- 导出 luman 的数据库结构
-CREATE DATABASE IF NOT EXISTS `luman` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-USE `luman`;
+CREATE DATABASE IF NOT EXISTS `s1sh` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+USE `s1sh`;
 
 -- 导出  表 luman.sys_node 结构
 CREATE TABLE IF NOT EXISTS `sys_node` (
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `sys_node` (
   PRIMARY KEY (`id`),
   KEY `FK_PARENT_ID_REF_ID` (`parent_id`),
   CONSTRAINT `FK_PARENT_ID_REF_ID` FOREIGN KEY (`parent_id`) REFERENCES `sys_node` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COMMENT='系统后台功能菜单';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='系统后台功能菜单';
 
 -- 正在导出表  luman.sys_node 的数据：~9 rows (大约)
 /*!40000 ALTER TABLE `sys_node` DISABLE KEYS */;

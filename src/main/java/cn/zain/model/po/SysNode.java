@@ -1,14 +1,12 @@
 package cn.zain.model.po;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Set;
 
 /**
  * Copyright (c) 2016 www.yongzhian.cn. All Rights Reserved.
+ * @author Zain
  */
-@Entity
-@Table(name = "sys_node", schema = "luman", catalog = "")
 public class SysNode {
     private Long id;
     private String nodeCode;
@@ -21,8 +19,6 @@ public class SysNode {
     private SysNode parentNode;
     private Set<SysRole> roles;
 
-    @Id
-    @Column(name = "id", nullable = false)
     public Long getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class SysNode {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "node_code", nullable = false, length = 50)
     public String getNodeCode() {
         return nodeCode;
     }
@@ -41,8 +35,6 @@ public class SysNode {
         this.nodeCode = nodeCode;
     }
 
-    @Basic
-    @Column(name = "node_name", nullable = false, length = 50)
     public String getNodeName() {
         return nodeName;
     }
@@ -51,8 +43,6 @@ public class SysNode {
         this.nodeName = nodeName;
     }
 
-    @Basic
-    @Column(name = "icon", nullable = true, length = 50)
     public String getIcon() {
         return icon;
     }
@@ -61,8 +51,6 @@ public class SysNode {
         this.icon = icon;
     }
 
-    @Basic
-    @Column(name = "url", nullable = true, length = 200)
     public String getUrl() {
         return url;
     }
@@ -71,8 +59,6 @@ public class SysNode {
         this.url = url;
     }
 
-    @Basic
-    @Column(name = "create_date", nullable = false)
     public Timestamp getCreateDate() {
         return createDate;
     }
@@ -81,8 +67,6 @@ public class SysNode {
         this.createDate = createDate;
     }
 
-    @Basic
-    @Column(name = "is_valid", nullable = false, length = 1)
     public String getIsValid() {
         return isValid;
     }
@@ -91,8 +75,6 @@ public class SysNode {
         this.isValid = isValid;
     }
 
-    @Basic
-    @Column(name = "order_no", nullable = false)
     public Integer getOrderNo() {
         return orderNo;
     }
@@ -103,19 +85,37 @@ public class SysNode {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         SysNode sysNode = (SysNode) o;
 
-        if (id != null ? !id.equals(sysNode.id) : sysNode.id != null) return false;
-        if (nodeCode != null ? !nodeCode.equals(sysNode.nodeCode) : sysNode.nodeCode != null) return false;
-        if (nodeName != null ? !nodeName.equals(sysNode.nodeName) : sysNode.nodeName != null) return false;
-        if (icon != null ? !icon.equals(sysNode.icon) : sysNode.icon != null) return false;
+        if (id != null ? !id.equals(sysNode.id) : sysNode.id != null) {
+            return false;
+        }
+        if (nodeCode != null ? !nodeCode.equals(sysNode.nodeCode) : sysNode.nodeCode != null) {
+            return false;
+        }
+        if (nodeName != null ? !nodeName.equals(sysNode.nodeName) : sysNode.nodeName != null) {
+            return false;
+        }
+        if (icon != null ? !icon.equals(sysNode.icon) : sysNode.icon != null) {
+            return false;
+        }
         if (url != null ? !url.equals(sysNode.url) : sysNode.url != null) return false;
-        if (createDate != null ? !createDate.equals(sysNode.createDate) : sysNode.createDate != null) return false;
-        if (isValid != null ? !isValid.equals(sysNode.isValid) : sysNode.isValid != null) return false;
-        if (orderNo != null ? !orderNo.equals(sysNode.orderNo) : sysNode.orderNo != null) return false;
+        if (createDate != null ? !createDate.equals(sysNode.createDate) : sysNode.createDate != null) {
+            return false;
+        }
+        if (isValid != null ? !isValid.equals(sysNode.isValid) : sysNode.isValid != null) {
+            return false;
+        }
+        if (orderNo != null ? !orderNo.equals(sysNode.orderNo) : sysNode.orderNo != null) {
+            return false;
+        }
 
         return true;
     }
@@ -133,8 +133,6 @@ public class SysNode {
         return result;
     }
 
-    @OneToOne
-    @JoinColumn(name = "parent_id", referencedColumnName = "id")
     public SysNode getParentNode() {
         return parentNode;
     }
@@ -143,7 +141,6 @@ public class SysNode {
         this.parentNode = parentNode;
     }
 
-    @ManyToMany(mappedBy = "nodes")
     public Set<SysRole> getRoles() {
         return roles;
     }
@@ -164,7 +161,7 @@ public class SysNode {
                 ", isValid='" + isValid + '\'' +
                 ", orderNo=" + orderNo +
                 ", parentNode=" + parentNode +
-                ", roles=" +  (roles == null ? "null" : roles.size())  +
+                ", roles=" + (roles == null ? "null" : roles.size()) +
                 '}';
     }
 }

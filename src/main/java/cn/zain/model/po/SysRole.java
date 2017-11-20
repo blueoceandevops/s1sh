@@ -8,7 +8,7 @@ import java.util.Set;
  * Copyright (c) 2016 www.yongzhian.cn. All Rights Reserved.
  */
 @Entity
-@Table(name = "sys_role", schema = "luman", catalog = "")
+@Table(name = "sys_role", schema = "s1sh", catalog = "")
 public class SysRole {
     private Long id;
     private String roleCode;
@@ -104,7 +104,7 @@ public class SysRole {
     }
 
     @ManyToMany
-    @JoinTable(name = "sys_role_node", catalog = "", schema = "luman", joinColumns = @JoinColumn(name = "sys_role_id", referencedColumnName = "id", nullable = false), inverseJoinColumns = @JoinColumn(name = "sys_node_id", referencedColumnName = "id", nullable = false))
+    @JoinTable(name = "sys_role_node", catalog = "", schema = "s1sh", joinColumns = @JoinColumn(name = "sys_role_id", referencedColumnName = "id", nullable = false), inverseJoinColumns = @JoinColumn(name = "sys_node_id", referencedColumnName = "id", nullable = false))
     public Set<SysNode> getNodes() {
         return nodes;
     }

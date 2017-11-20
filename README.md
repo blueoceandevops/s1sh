@@ -24,3 +24,5 @@ struts1只能兼容spring3，而spring3只支持hibernate到4。Hibernate4.3.X�
 1. bean使用配置进行注入
 1. 添加Jetty的Web测试
 2. 添加SPI测试，动态查找指定目录下的实现类,参考http://blog.csdn.net/tonyhuang_google_com/article/details/49702291和http://blog.csdn.net/fenglibing/article/details/7083071
+3.基于Form的简单提交
+4.Hibernate注解中，SysNode使用配置，其他使用注解

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Copyright (c) 2016 www.yongzhian.cn. All Rights Reserved.
+ * @author Zain
  */
 public class UserAction extends Action {
     private Logger logger = Logger.getLogger(UserAction.class);

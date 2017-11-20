@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.zain.model.po.SysNode" table="sys_node" schema="luman">
+    <class name="cn.zain.model.po.SysNode" table="sys_node" schema="s1sh">
         <id name="id">
             <column name="id" sql-type="bigint(20)"/>
         </id>
@@ -30,7 +30,7 @@
             <column name="order_no" sql-type="int(6)"/>
         </property>
         <one-to-one name="parentNode" class="cn.zain.model.po.SysNode"/>
-        <set name="roles" inverse="true" table="sys_role_node" schema="luman" lazy="false">
+        <set name="roles" inverse="true" table="sys_role_node" schema="s1sh" lazy="false">
             <key>
                 <column name="sys_node_id"/>
             </key>

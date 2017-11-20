@@ -57,6 +57,7 @@ public class LoginAction extends Action {
         errors.add("error_msg", new ActionMessage("登录失败"));
         saveErrors(request, errors);
 
+        //返回原来的页面
         return new ActionForward(mapping.getInput());
 
     }
