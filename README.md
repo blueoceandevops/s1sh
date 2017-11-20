@@ -27,4 +27,4 @@ struts1只能兼容spring3，而spring3只支持hibernate到4。Hibernate4.3.X�
 2. 添加SPI测试，动态查找指定目录下的实现类,参考http://blog.csdn.net/tonyhuang_google_com/article/details/49702291和http://blog.csdn.net/fenglibing/article/details/7083071
 3.基于Form的简单提交
 4.Hibernate注解中，SysNode使用配置，其他使用注解
-5.直接使用Hibernate的SessionFactory
+5.直接使用Hibernate的SessionFactory,getSession()方法是没有经过spring包装的，spring会把最原始的session给你，在使用完之后必须自己调用相应的 close方法,如果由Spring管理则无须关闭
