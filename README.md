@@ -17,6 +17,7 @@
 
 struts1只能兼容spring3，而spring3只支持hibernate到4。Hibernate4.3.X中，org.hibernate.service.jta.platform.spi.JtaPlatform类换成了： org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform;故使用hibernate 4.2.21.Final。故采用版本struts 1.3.10+spring 3.2.17.RELEASE + hibernate 4.2.21.Final
 
+##### 项目特色
 1. 使用Struts1标签
 1. 国际化
 1. 添加MD5Util
@@ -26,3 +27,4 @@ struts1只能兼容spring3，而spring3只支持hibernate到4。Hibernate4.3.X�
 2. 添加SPI测试，动态查找指定目录下的实现类,参考http://blog.csdn.net/tonyhuang_google_com/article/details/49702291和http://blog.csdn.net/fenglibing/article/details/7083071
 3.基于Form的简单提交
 4.Hibernate注解中，SysNode使用配置，其他使用注解
+5.直接使用Hibernate的SessionFactory
